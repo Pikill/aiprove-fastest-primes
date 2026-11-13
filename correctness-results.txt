@@ -1,0 +1,29 @@
+=== verify: C binary (./primes) ===
+OK  pi(1) = 0 (expected 0)
+OK  pi(2) = 1 (expected 1)
+OK  pi(3) = 2 (expected 2)
+OK  pi(4) = 2 (expected 2)
+OK  pi(5) = 3 (expected 3)
+OK  pi(10) = 4 (expected 4)
+OK  pi(100) = 25 (expected 25)
+OK  pi(1000) = 168 (expected 168)
+OK  pi(100000) = 9592 (expected 9592)
+OK  pi(1000000) = 78498 (expected 78498)
+OK  pi(4999999) = 348513 (expected 348513)
+OK  pi(5000000) = 348513 (expected 348513)
+ALL PASS
+
+=== verify: Python fallback (solution.py) ===
+OK  pi(1) = 0 (expected 0)
+OK  pi(2) = 1 (expected 1)
+OK  pi(3) = 2 (expected 2)
+OK  pi(4) = 2 (expected 2)
+OK  pi(5) = 3 (expected 3)
+OK  pi(10) = 4 (expected 4)
+OK  pi(100) = 25 (expected 25)
+OK  pi(1000) = 168 (expected 168)
+OK  pi(100000) = 9592 (expected 9592)
+OK  pi(1000000) = 78498 (expected 78498)
+OK  pi(4999999) = 348513 (expected 348513)
+OK  pi(5000000) = 348513 (expected 348513)
+ALL PASS

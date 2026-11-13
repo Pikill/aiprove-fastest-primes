@@ -1,0 +1,21 @@
+Benchmark — end-to-end wall clock (process spawn -> exit), stdin -> stdout
+Machine: AMD EPYC 9D25 126-Core Processor, 4 vCPU visible, gcc 13, Python 3.12.3
+Build: gcc -O3 -march=native -o primes primes.c
+
+== FINAL C entry (./primes) ==
+command: ./primes   runs per size: 25
+N=  100000: min    0.848 ms | median    0.988 ms | mean    1.150 ms | max    2.416 ms
+N= 1000000: min    1.599 ms | median    1.693 ms | mean    1.981 ms | max    2.933 ms
+N= 5000000: min    5.756 ms | median    6.046 ms | mean    6.221 ms | max    9.271 ms
+
+== Python fallback (python3 solution.py) ==
+command: python3 solution.py   runs per size: 9
+N=  100000: min   25.152 ms | median   25.208 ms | mean   25.692 ms | max   26.938 ms
+N= 1000000: min   28.237 ms | median   28.985 ms | mean   29.030 ms | max   30.354 ms
+N= 5000000: min   45.332 ms | median   46.223 ms | mean   46.218 ms | max   47.564 ms
+
+Variant comparison at N=5000000 (25 runs each, earlier rounds on this machine):
+  v1 byte-array + memset fill : median 6.47 ms (round 1) / 7.70 ms (round 2)
+  bitset (1 bit per odd)      : median 6.10 ms (round 1)
+  inverted flags + calloc     : median 5.96 ms (round 1)
+  FINAL inverted+calloc+sumcount (this build): see above
